@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="login.html"> -->
+    <!-- log in -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
+    <!-- axois -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        
+        $(document).ready(function () {
+            $("#myModal").modal('show');
+        });
+    </script>
+    <title>MEMORY CARD GAME</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="header col-10">
+                <h1>MEMORY CARD GAME</h1>
+            </div>
+            <div class="point col-10">
+                <div class="moves col-2">Move(s): </div>
+                <div class="timer col-2">Timer : </div>
+                <div class="success col-2">Successful : </div>
+
+            </div>
+        </div>
+        <!-- <div class="timer">
+    </div> -->
+        <div class="row">
+            <div class="full col-10 col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                <div class="row">
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="burger">
+                        <img class="card-img-top front-image" src="image/burger.jpg" alt="burger">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="Chinese-food">
+                        <img class="card-img-top front-image" src="image/Chinese food.jpg" alt="Chinese-food">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="coffee">
+                        <img class="card-img-top front-image" src="image/coffee.jpg" alt="coffee">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="Cup-Cake">
+                        <img class="card-img-top front-image" src="image/Cup Cake.jpg" alt="Cup-Cake">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="Donut">
+                        <img class="card-img-top front-image" src="image/Donut.jpg" alt="Donut">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="Drink">
+                        <img class="card-img-top front-image" src="image/Drink.jpg" alt="Drink">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="French-French">
+                        <img class="card-img-top front-image" src="image/French Fries.jpg" alt="French-French">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="Ice-Cream">
+                        <img class="card-img-top front-image" src="image/Ice Cream.jpg" alt="Ice-Cream">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="Pizza">
+                        <img class="card-img-top front-image" src="image/Pizza.jpg" alt="Pizza">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="burger">
+                        <img class="card-img-top front-image" src="image/burger.jpg" alt="burger">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="Chinese-food">
+                        <img class="card-img-top front-image" src="image/Chinese food.jpg" alt="Chinese-food">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="coffee">
+                        <img class="card-img-top front-image" src="image/coffee.jpg" alt="coffee">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="Cup-Cake">
+                        <img class="card-img-top front-image" src="image/Cup Cake.jpg" alt="Cup-Cake">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="Donut">
+                        <img class="card-img-top front-image" src="image/Donut.jpg" alt="Donut">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="Drink">
+                        <img class="card-img-top front-image" src="image/Drink.jpg" alt="Drink">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="French-French">
+                        <img class="card-img-top front-image" src="image/French Fries.jpg" alt="French-French">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="Ice-Cream">
+                        <img class="card-img-top front-image" src="image/Ice Cream.jpg" alt="Ice-Cream">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                    <div class="cart col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" data-check="Pizza">
+                        <img class="card-img-top front-image" src="image/Pizza.jpg" alt="Pizza">
+                        <img class="card-img-top back-image" src="image/back2.jpg" alt="back">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer col-10">
+                <button type="button" class="btn btn-light res" id="restart" onClick="history.go(0);">Restart</button>
+            </div>
+        </div>
+        <!-- win -->
+        <div class="win" id="win">
+            <h1 id="win-text"> </h1>
+
+            <button type="button" class="btn btn" id="restart" onClick="history.go(0);">Restart</button>
+        </div>
+    </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <!-- modal -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                </div>
+                <div class="modal-body">
+                    <!-- login -->
+                    <form id="login-form" class="form" action="" method="post">
+                        <h3 class="text-center text-infoo">Login</h3>
+                        <div class="form-group">
+                            <label for="username" class="text-infoo">Username:</label><br>
+                            <input type="email" class="form-control username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control password" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="remember-me" class="text-infoo"><span><input id="remember-me" name="remember-me"
+                                        type="checkbox"></span><span> Remember me</span> </label><br>
+                            <p class="textError" style="color: red;"></p>
+                            <input type="button" name="login" class="btn btn-dark btn-md login" value="login">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="memory.js">
+    </script>
+    <!-- <script src="login.html"></script> -->
+</body>
+
+</html>
